@@ -1,0 +1,57 @@
+---
+import Card from '../../components/Card.astro';
+import { CustomWebComponent }  from '../../components/custom-web-component.js';
+import GenericStyle from '../../styles/GenericStyle.astro';
+---
+<script src="./src/components/custom-web-component.js" type="module"></script>
+
+<main>
+    <h1>Welcome to <span class="text-gradient">Custom web component Rendered with Astro </span></h1>
+    <p class="instructions">
+        this astro index file uses astro component and native custom web component element
+    </p>
+    <Card
+        href="/"
+        title="Back to home page"
+        body="navigates back to /pages and loads the default index file"
+    />
+    <!--
+    <h3>Example imports the component's class for use it in astro file</h3>
+
+    When using any other framework integration e.g react, vue, custom components should be referenced using registered tag as opposed to imported class
+    <CustomWebComponent count="1"></CustomWebComponent>
+    -->
+    <h3>Example below uses the custom component tag directly</h3>
+    <custom-web-component count="2"></custom-web-component>
+
+    <br/><br/>
+    <a href="/web-component/ExampleWC">See Web component example in html file</a>
+
+</main>
+
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+</style>
+

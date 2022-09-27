@@ -1,0 +1,54 @@
+---
+import Card from '../../components/Card.astro';
+import GenericStyle from '../../styles/GenericStyle.astro';
+import {CustomLitComponent} from '../../components/custom-lit-component';
+---
+
+<main>
+    <h1>Welcome to <span class="text-gradient">Custom web component Rendered with Astro </span></h1>
+    <p class="instructions">
+        this astro index file uses astro component and native custom web component element
+    </p>
+    <Card
+            href="/"
+            title="Back to home page"
+            body="navigates back to /pages and loads the default index file"
+    />
+    <h3>Example imports the component's class for use it in astro file</h3>
+    <CustomLitComponent count="1"/>
+    <CustomLitComponent count="2"/>
+    <CustomLitComponent count="3"/>
+    <h3>Example below uses the custom component tag directly without additonal imports</h3>
+    <custom-lit-component count="4"></custom-lit-component>
+
+    <br/><br/>
+    <a href="/lit-element/ExampleLit">See lit-element example in html file</a>
+    <br/>
+    <a href="/">Back to start page</a>
+</main>
+
+
+<style>
+    :root {
+        --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+    }
+
+    h1 {
+        margin: 2rem 0;
+    }
+
+    main {
+        margin: auto;
+        padding: 1em;
+        max-width: 60ch;
+    }
+
+    .instructions {
+        line-height: 1.6;
+        margin: 1rem 0;
+        background: #4f39fa;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: var(--color-bg);
+    }
+</style>

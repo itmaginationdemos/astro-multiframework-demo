@@ -1,0 +1,35 @@
+---
+import Card from '../../components/Card.astro';
+---
+<div>
+    <h1>Welcome to astro examples</h1>
+    <Card
+            href="astro/page1"
+            title="Page 1"
+            body=""
+    />
+    <Card
+            href="astro/page2"
+            title="page 2"
+    />
+    <Card
+            href="astro/more-info"
+            title="More info"
+    />
+    <Card
+            href="astro/more-info/page1"
+            title="More info > Page 1"
+    />
+    <Card
+            href="/"
+            title="Back to start page"
+            body="navigates back to /pages and loads the default index file"
+    />
+
+</div>
+
+<style>
+    a {
+        display: block;
+    }
+</style>

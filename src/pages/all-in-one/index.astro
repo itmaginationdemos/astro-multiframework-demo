@@ -1,0 +1,64 @@
+---
+import Card from '../../components/Card.astro';
+import GenericStyle from '../../styles/GenericStyle.astro';
+import {CustomLitComponent} from '../../components/custom-lit-component';
+import AngularComponentWrapper from '../../components/AngularComponentWrapper.astro';
+import { CustomReactTodoApp }  from '../../components/custom-react-component';
+import CustomVueComponent from '../../components/CustomVueComponent.vue'
+---
+<script src="./src/components/custom-web-component.js" type="module"></script>
+
+<main>
+    <h1>All components in one project</h1>
+    <p>
+        This is the index .astro page in src/pages/all-in-one
+    </p>
+    <div class="component-block">
+        <AngularComponentWrapper count="1"/>
+    </div>
+    <div class="component-block">
+        <Card
+                href="https://docs.astro.build/"
+                title="Astro Component"
+                body="Learn how Astro works and explore the official API docs."
+        />
+    </div>
+    <div class="component-block">
+        <h3>Lit Element Component</h3>
+        <CustomLitComponent count="1"/>
+    </div>
+    <div class="component-block">
+        <h3>React Component</h3>
+        <CustomReactTodoApp count="1" client:idle="react"></CustomReactTodoApp>
+    </div>
+    <div class="component-block">
+        <h3>Vue Component</h3>
+        <CustomVueComponent count="1" client:visible></CustomVueComponent>
+    </div>
+    <div class="component-block">
+        <h3>Custom Web Component</h3>
+        <custom-web-component></custom-web-component>
+    </div>
+
+</main>
+
+
+<style>
+
+    body > main {
+        padding: 10px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    .component-block{
+        display: block;
+        margin: 10px;
+        padding: 4px;
+        border-top: 10px solid cornflowerblue;
+        background: white;
+        border-radius: 5px;
+        width: auto;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,53 @@
+---
+import Card from '../../components/Card.astro';
+import GenericStyle from '../../styles/GenericStyle.astro';
+import CustomVueComponent from '../../components/CustomVueComponent.vue'
+---
+
+
+<main>
+    <h1>Welcome to <span class="text-gradient">Custom VueJS Components Rendered with Astro </span></h1>
+    <p class="instructions">
+        this astro index file uses astro component and custom VueJS components
+    </p>
+    <Card
+            href="/"
+            title="Back to home page"
+            body="navigates back to /pages and loads the default index file"
+    />
+
+    <CustomVueComponent count="1" client:visible></CustomVueComponent>
+
+    <br/><br/>
+    <a href="/vue/ExampleVue">See Vue example in html file</a>
+</main>
+
+
+<style>
+    :root {
+        --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+    }
+
+    h1 {
+        margin: 2rem 0;
+    }
+
+    main {
+        margin: auto;
+        padding: 1em;
+        max-width: 60ch;
+    }
+
+    .instructions {
+        line-height: 1.6;
+        margin: 1rem 0;
+        background: #4f39fa;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: var(--color-bg);
+    }
+</style>
+<script>export default {
+    components: {}
+}
+</script>

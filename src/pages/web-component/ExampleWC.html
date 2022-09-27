@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Simple template</title>
+</head>
+<body>
+  <h1>Simple template</h1>
+
+  <template id="my-paragraph">
+    <style>
+      .count-shown {
+        border-bottom: 1px solid black;
+        padding: 2px;
+      }
+
+      p {
+        color: white;
+        background-color: #666;
+        padding: 5px;
+        margin-bottom: 5px;
+      }
+    </style>
+    <p>My default text</p>
+  </template>
+
+  <my-paragraph></my-paragraph>
+  <ul>
+    <my-paragraph count="1"></my-paragraph>
+    <my-paragraph count="2"></my-paragraph>
+    <my-paragraph count="3"></my-paragraph>
+  </ul>
+
+  <br/><br/>
+  <a href="/">Back to start page</a>
+</body>
+<script defer=true>
+  customElements.define('my-paragraph',
+          class extends HTMLElement {
+
+            constructor() {
+              super();
+
+              const template = document.getElementById('my-paragraph');
+              const templateContent = template.content;
+
+              this.attachShadow({mode: 'open'}).appendChild(
+                      templateContent.cloneNode(true)
+              );
+
+              const count = this.getAttribute('count');
+              if (count) {
+                const showCountDiv =document.createElement("div");
+                showCountDiv.innerText = "with count: " + count;
+                showCountDiv.classList.add('count-shown');
+                this.shadowRoot.append(showCountDiv)
+              }
+
+            }
+          }
+  );
+</script>
+</html>

@@ -1,0 +1,53 @@
+---
+import Card from '../../components/Card.astro';
+import GenericStyle from '../../styles/GenericStyle.astro';
+---
+
+<script src="/angular_assets/runtime.f12b6390b6dfe9bc.js" type="module"></script>
+<script src="/angular_assets/polyfills.cd4b02e8647d32c8.js" type="module"></script>
+<script src="/angular_assets/main.28c576b20400a3a6.js" type="module"></script>
+
+
+<main>
+    <h1>Welcome to <span class="text-gradient">Angular built project Rendered with Astro </span></h1>
+    <p class="instructions">
+        this astro index file uses astro component and custom Angular project
+    </p>
+    <Card
+            href="/"
+            title="Back to home page"
+            body="navigates back to /pages and loads the default index file"
+    />
+    <app-root count="1"></app-root>
+
+    <br/><br/>
+    <a href="/angular/ExampleAngular">See angular example in html file</a>
+    <br/>
+    <a href="/">Back to start page</a>
+</main>
+
+
+<style>
+    :root {
+        --astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+    }
+
+    h1 {
+        margin: 2rem 0;
+    }
+
+    main {
+        margin: auto;
+        padding: 1em;
+        max-width: 60ch;
+    }
+
+    .instructions {
+        line-height: 1.6;
+        margin: 1rem 0;
+        background: #4f39fa;
+        padding: 1rem;
+        border-radius: 0.4rem;
+        color: var(--color-bg);
+    }
+</style>

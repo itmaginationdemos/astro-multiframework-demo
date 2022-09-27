@@ -1,0 +1,42 @@
+---
+import Card from '../../../components/Card.astro';
+import GenericStyle from '../../../styles/GenericStyle.astro';
+---
+
+<main>
+    <h1>Welcome to <span class="text-gradient">Astro More Info Index Page</span></h1>
+    <p class="instructions">
+        This is the index .astro page in src/pages/more-info
+    </p>
+    <Card
+        href="/"
+        title="Back to home page"
+        body="navigates back to /pages and loads the default index file"
+    />
+</main>
+
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+</style>

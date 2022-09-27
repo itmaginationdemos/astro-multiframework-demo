@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<h1><span class="text-gradient">Astro</span> Multi-Framework Project</h1>
+		<p class="instructions">
+			Check out the <code>src/pages</code> directory to get started.<br />
+			This project contains example from various frameworks pieced together to form a single large project
+            with all parts of the project independent of each other while working together
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="/all-in-one"
+				title="See All Components"
+				body="All the components generated from multiple frameworks are rendered in one page"
+			/>
+			<Card
+				href="/angular"
+				title="See Angular Component"
+				body="Angular project is built and generated files included as sub project under Astro"
+			/>
+			<Card
+				href="/astro"
+				title="See Astro Component"
+				body="Shows astro components as a sub project"
+			/>
+			<Card
+				href="/lit-element"
+				title="See Lit Element component"
+				body="Lit element component used as part of the bigger project can be seen"
+			/>
+            <Card
+                href="/react"
+                title="See React component"
+                body="React component example as part of bigger project can be seen"
+            />
+            <Card
+                href="/vue"
+                title="See VueJS / Vue component"
+                body="Vue component example can be seen here"
+            />
+            <Card
+                href="/web-component"
+                title="See Web component example"
+                body="custom web component created as part of the projecr can be seen here"
+            />
+		</ul>
+	</main>
+</Layout>
+
+<style>
+	:root {
+		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
+	}
+
+	h1 {
+		margin: 2rem 0;
+	}
+
+	main {
+		margin: auto;
+		padding: 1em;
+		max-width: 60ch;
+	}
+
+	.text-gradient {
+		font-weight: 900;
+		background-image: var(--astro-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 100% 200%;
+		background-position-y: 100%;
+		border-radius: 0.4rem;
+		animation: pulse 4s ease-in-out infinite;
+	}
+
+	@keyframes pulse {
+		0%,
+		100% {
+			background-position-y: 0%;
+		}
+		50% {
+			background-position-y: 80%;
+		}
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		background: #4f39fa;
+		padding: 1rem;
+		border-radius: 0.4rem;
+		color: var(--color-bg);
+	}
+
+	.instructions code {
+		font-size: 0.875em;
+		border: 0.1em solid var(--color-border);
+		border-radius: 4px;
+		padding: 0.15em 0.25em;
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
