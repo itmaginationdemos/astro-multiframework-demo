@@ -1,3 +1,14 @@
+# Welcome to [ITMAGINATION's demo](https://itmagination.com).
+
+One of our Senior Angular Developers, Zino Adidi, has set up a project where he made Web Components, React, Angular, Vue, and Lit run together on one page.
+
+You may also see his approach to integrating Angular, because at the time of development this was **not** a straightforward task.
+
+Be sure to read the accompanying post [here: https://www.itmagination.com/blog/astro-micro-frontends](https://www.itmagination.com/blog/astro-micro-frontends)
+
+
+ASTRO GENERATED TEXT BELOW
+___
 # Welcome to [Astro](https://astro.build)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
